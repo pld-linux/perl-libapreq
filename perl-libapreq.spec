@@ -15,7 +15,7 @@ URL:		http://httpd.apache.org/apreq/
 BuildRequires:	apache1-mod_perl >= 1.26-5
 BuildRequires:	perl-devel >= 5.8
 BuildRequires:	rpm-perlprov >= 4.1-13
-Requires:	apache-mod_perl >= 1.26
+Requires:	apache1-mod_perl >= 1.26
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 # remember about libapreq.spec when incrementing version
