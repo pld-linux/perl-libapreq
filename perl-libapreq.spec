@@ -60,10 +60,10 @@ rm -rf $RPM_BUILD_ROOT
 %{perl_vendorarch}/Apache/*.pm
 
 %dir %{perl_vendorarch}/auto/Apache/Cookie
-%{perl_vendorarch}/auto/Apache/Cookie/Cookie.bs
-%attr(755,root,root) %{perl_vendorarch}/auto/Apache/Cookie/Cookie.so
 %dir %{perl_vendorarch}/auto/Apache/Request
+%{perl_vendorarch}/auto/Apache/Cookie/Cookie.bs
 %{perl_vendorarch}/auto/Apache/Request/Request.bs
+%attr(755,root,root) %{perl_vendorarch}/auto/Apache/Cookie/Cookie.so
 %attr(755,root,root) %{perl_vendorarch}/auto/Apache/Request/Request.so
 
 %dir %{perl_vendorarch}/auto/libapreq
