@@ -1,35 +1,31 @@
 %include	/usr/lib/rpm/macros.perl
-Summary:	Perl 
-Summary(pl):	Modu³ perla LIBWWW
+Summary:	libapreq perl module
+Summary(pl):	Modu³ perla libapreq
 Name:		perl-libwww
-Version:	5.64
-Release:	2
-License:	GPL
+Version:	0.33
+Release:	1
+License:	Apache Group
 Group:		Development/Languages/Perl
-Source0:	ftp://ftp.cpan.org/pub/CPAN/modules/by-module/WWW/libwww-perl-%{version}.tar.gz
-BuildRequires:	rpm-perlprov >= 3.0.3-18
-BuildRequires:  perl(Net::FTP) >= 2.58
+Source0:	http://www.apache.org/dist/httpd/libapreq-%{version}.tar.gz
+URL:		http://httpd.apache.org/apreq/
 BuildRequires:	perl >= 5.6
-BuildArch:	noarch
+BuildRequires:	rpm-perlprov >= 3.0.3-18
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-Obsoletes:	perl-libwww-perl
-
-# modules not always required
-%define	_noautoreq "perl(HTML::Parse)" "perl(HTML::FormatPS)" "perl(HTML::FormatText)" "perl(HTTP::GHTTP)" "perl(IO::Socket::SSL)" "perl(Mail::Internet)"
 
 %description
-Libwww-perl is a collection of Perl modules which provides a simple
-and consistent programming interface (API) to the World-Wide Web.
+This package contains modules for manipulating client request data via
+the Apache API with Perl and C.
 
 %description -l pl
-Libwww-perl jest kolekcj± modu³ów Perla, które dostaczaj± proste API
-do WWW (World-Wide Web).
+Ten pakiet zawiera modu³y do manipulowania danymi z zapytañ klientów
+poprzez API Apache'a.
 
 %prep
-%setup -q -n libwww-perl-%{version}
+%setup -q -n libapreq-%{version}
 
 %build
-perl Makefile.PL </dev/null
+perl Makefile.PL
+
 %{__make} OPTIMIZE="%{rpmcflags}"
 
 %install
@@ -37,7 +33,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} install DESTDIR=$RPM_BUILD_ROOT
 
-gzip -9nf README TODO
+gzip -9nf Changes LICENSE README ToDo
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -45,15 +41,3 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc *.gz
-%{perl_sitelib}/*.pm
-%{perl_sitelib}/*.pod
-%{perl_sitelib}/Bundle/*
-%{perl_sitelib}/File/*
-%{perl_sitelib}/HTML/*
-%{perl_sitelib}/HTTP/*
-%{perl_sitelib}/Net/*
-%{perl_sitelib}/LWP
-%{perl_sitelib}/WWW
-%attr(755,root,root) %{_bindir}/*
-%{_mandir}/man1/*
-%{_mandir}/man3/*
