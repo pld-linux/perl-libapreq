@@ -35,7 +35,7 @@ cliente através da API do Apache em Perl.
 %setup -q -n %{pnam}-%{version}
 
 %build
-perl Makefile.PL
+echo "/home/services/httpd" | perl Makefile.PL
 %{__make} OPTIMIZE="%{rpmcflags}"
 
 %install
