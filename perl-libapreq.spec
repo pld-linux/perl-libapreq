@@ -5,8 +5,8 @@ Summary:	Generic Apache Request Library
 Summary(pl):	Standardowa biblioteka zapytañ Apache
 Summary(pt_BR):	Biblioteca de requisiçoes do Apache
 Name:		perl-libapreq
-Version:	1.0
-Release:	3
+Version:	1.1
+Release:	1
 License:	Apache Group
 Group:		Development/Languages/Perl
 Source0:	http://www.apache.org/dist/httpd/%{pdir}/%{pnam}-%{version}.tar.gz
