@@ -7,7 +7,7 @@ Summary(pt_BR):	Biblioteca de requisiçoes do Apache
 Name:		perl-libapreq
 Version:	1.3
 Release:	1
-License:	Apache Group
+License:	Apache Software License 1.1
 Group:		Development/Languages/Perl
 Source0:	http://www.apache.org/dist/httpd/%{pdir}/%{pnam}-%{version}.tar.gz
 # Source0-md5:	b40854e91a6210a3af47ffffef9a875e
