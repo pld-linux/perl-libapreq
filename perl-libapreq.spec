@@ -13,7 +13,7 @@ Source0:	http://www.apache.org/dist/httpd/%{pdir}/%{pnam}-%{version}.tar.gz
 # Source0-md5:	b40854e91a6210a3af47ffffef9a875e
 URL:		http://httpd.apache.org/apreq/
 BuildRequires:	apache1-mod_perl >= 1.26-5
-BuildRequires:	perl-devel >= 5.8
+BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
 Requires:	apache1-mod_perl >= 1.26
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
