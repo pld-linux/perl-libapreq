@@ -1,6 +1,6 @@
 %include	/usr/lib/rpm/macros.perl
-%define	pnam	libapreq
-%define	pdir	libapreq
+%define		pnam	libapreq
+%define		pdir	libapreq
 Summary:	Generic Apache Request Library
 Summary(pl):	Standardowa biblioteka zapytañ Apache
 Summary(pt_BR):	Biblioteca de requisiçoes do Apache
