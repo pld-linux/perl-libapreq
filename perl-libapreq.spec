@@ -1,14 +1,15 @@
 %include	/usr/lib/rpm/macros.perl
-%define pnam	libapreq
+%define		pnam	libapreq
+%define		pdir	libapreq
 Summary:	Generic Apache Request Library
 Summary(pl):	Standardowa biblioteka zapytañ Apache
 Summary(pt_BR):	Biblioteca de requisiçoes do Apache
-Name:		perl-%{pnam}
+Name:		perl-libapreq
 Version:	1.0
 Release:	1
 License:	Apache Group
 Group:		Development/Languages/Perl
-Source0:	http://www.apache.org/dist/httpd/%{pnam}-%{version}.tar.gz
+Source0:	http://www.apache.org/dist/httpd/%{pdir}/%{pnam}-%{version}.tar.gz
 URL:		http://httpd.apache.org/apreq/
 BuildRequires:	rpm-perlprov >= 3.0.3-16
 BuildRequires:	perl >= 5.6
@@ -42,7 +43,7 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install DESTDIR=$RPM_BUILD_ROOT
 
 install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
-cp -a eg/* $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
+cp -f eg/* $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
