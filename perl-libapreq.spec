@@ -38,7 +38,6 @@ cliente através da API do Apache em Perl.
 %build
 echo "/home/services/httpd" | perl Makefile.PL \
 	INSTALLDIRS=vendor
-
 %{__make} \
 	OPTIMIZE="%{rpmcflags}"
 
