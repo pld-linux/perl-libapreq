@@ -6,7 +6,7 @@ Summary(pl):	Standardowa biblioteka zapytañ Apache
 Summary(pt_BR):	Biblioteca de requisiçoes do Apache
 Name:		perl-libapreq
 Version:	1.0
-Release:	1
+Release:	2
 License:	Apache Group
 Group:		Development/Languages/Perl
 Source0:	http://www.apache.org/dist/httpd/%{pdir}/%{pnam}-%{version}.tar.gz
@@ -15,20 +15,21 @@ BuildRequires:	rpm-perlprov >= 3.0.3-16
 BuildRequires:	perl >= 5.6
 BuildRequires:	apache-mod_perl >= 1.26-5
 Requires:	apache-mod_perl >= 1.26
-Provides:	perl(Apache::Request) = 1.0 perl(Apache::Cookie) = 1.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+
+# remember about libapreq.spec when incrementing version
 
 %description
 This package contains modules for manipulating client request data via
-the Apache API with Perl and C.
+the Apache API with Perl.
 
 %description -l pl
 Ten pakiet zawiera modu³y, s³u¿±ce do manipulowania z zapytañ klientów
-HTTP danymi poprzez API Apache przy u¿yciu Perla i C.
+HTTP danymi poprzez API Apache przy u¿yciu Perla.
 
 %description -l pt_BR
 Este pacote contém módulos para a manipulação de requisições de
-cliente através da API do Apache em Perl e C.
+cliente através da API do Apache em Perl.
 
 
 %prep
@@ -43,7 +44,7 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install DESTDIR=$RPM_BUILD_ROOT
 
 install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
-cp -af eg/* $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
+cp -af eg/perl/* $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -65,6 +66,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %{perl_sitearch}/auto/libapreq/include
 
-%doc Changes CREDITS INSTALL LICENSE README ToDo
+%doc Changes CREDITS README ToDo
 %{_examplesdir}/%{name}-%{version}
-%{_mandir}/man3/*
+%{_mandir}/man3/Apache*
