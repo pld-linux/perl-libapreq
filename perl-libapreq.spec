@@ -6,14 +6,14 @@ Summary(pl):	Standardowa biblioteka zapytañ Apache
 Summary(pt_BR):	Biblioteca de requisiçoes do Apache
 Name:		perl-libapreq
 Version:	1.1
-Release:	1
+Release:	2
 License:	Apache Group
 Group:		Development/Languages/Perl
 Source0:	http://www.apache.org/dist/httpd/%{pdir}/%{pnam}-%{version}.tar.gz
 URL:		http://httpd.apache.org/apreq/
 BuildRequires:	apache-mod_perl >= 1.26-5
 BuildRequires:	perl >= 5.6
-BuildRequires:	rpm-perlprov >= 3.0.3-16
+BuildRequires:	rpm-perlprov >= 4.1-13
 Requires:	apache-mod_perl >= 1.26
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -51,19 +51,19 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc Changes CREDITS README ToDo
-%{perl_sitearch}/Apache/*.pm
+%{perl_vendorarch}/Apache/*.pm
 
-%dir %{perl_sitearch}/auto/Apache/Cookie
-%{perl_sitearch}/auto/Apache/Cookie/Cookie.bs
-%attr(755,root,root) %{perl_sitearch}/auto/Apache/Cookie/Cookie.so
-%dir %{perl_sitearch}/auto/Apache/Request
-%{perl_sitearch}/auto/Apache/Request/Request.bs
-%attr(755,root,root) %{perl_sitearch}/auto/Apache/Request/Request.so
+%dir %{perl_vendorarch}/auto/Apache/Cookie
+%{perl_vendorarch}/auto/Apache/Cookie/Cookie.bs
+%attr(755,root,root) %{perl_vendorarch}/auto/Apache/Cookie/Cookie.so
+%dir %{perl_vendorarch}/auto/Apache/Request
+%{perl_vendorarch}/auto/Apache/Request/Request.bs
+%attr(755,root,root) %{perl_vendorarch}/auto/Apache/Request/Request.so
 
-%dir %{perl_sitearch}/auto/libapreq
-%{perl_sitearch}/auto/libapreq/extralibs.ld
-%attr(755,root,root) %{perl_sitearch}/auto/libapreq/libapreq.a
-%{perl_sitearch}/auto/libapreq/include
+%dir %{perl_vendorarch}/auto/libapreq
+%{perl_vendorarch}/auto/libapreq/extralibs.ld
+%attr(755,root,root) %{perl_vendorarch}/auto/libapreq/libapreq.a
+%{perl_vendorarch}/auto/libapreq/include
 
 %{_examplesdir}/%{name}-%{version}
 %{_mandir}/man3/Apache*
