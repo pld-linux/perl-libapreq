@@ -1,9 +1,9 @@
 %include	/usr/lib/rpm/macros.perl
 Summary:	libapreq perl module
 Summary(pl):	Modu³ perla libapreq
-Name:		perl-libwww
+Name:		perl-libapreq
 Version:	0.33
-Release:	2
+Release:	1
 License:	Apache Group
 Group:		Development/Languages/Perl
 Source0:	http://www.apache.org/dist/httpd/libapreq-%{version}.tar.gz
@@ -42,3 +42,19 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc *.gz
+%{perl_sitearch}/Apache/*
+%dir %{perl_sitearch}/auto/Apache/Cookie
+%{perl_sitearch}/auto/Apache/Cookie/Cookie.bs
+%attr(755,root,root) %{perl_sitearch}/auto/Apache/Cookie/Cookie.so
+%dir %{perl_sitearch}/auto/Apache/Request
+%{perl_sitearch}/auto/Apache/Request/Request.bs
+%attr(755,root,root) %{perl_sitearch}/auto/Apache/Request/Request.so
+
+%{_mandir}/man3/*
+
+%dir %{perl_sitearch}/auto/libapreq
+%{perl_sitearch}/auto/libapreq/include
+%{perl_sitearch}/auto/libapreq/.packlist
+%{perl_sitearch}/auto/libapreq/extralibs.ld
+%attr(755,root,root) %{perl_sitearch}/auto/libapreq/libapreq.a
+%{perl_sitearch}/libapreq.pod
