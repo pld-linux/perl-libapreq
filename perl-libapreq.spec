@@ -6,7 +6,7 @@ Version:	5.64
 Release:	2
 License:	GPL
 Group:		Development/Languages/Perl
-Source0:	ftp://ftp.perl.org/pub/CPAN/modules/by-module/WWW/libwww-perl-%{version}.tar.gz
+Source0:	ftp://ftp.cpan.org/pub/CPAN/modules/by-module/WWW/libwww-perl-%{version}.tar.gz
 BuildRequires:	rpm-perlprov >= 3.0.3-18
 BuildRequires:  perl(Net::FTP) >= 2.58
 BuildRequires:	perl >= 5.6
