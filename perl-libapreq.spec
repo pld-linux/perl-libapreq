@@ -3,12 +3,13 @@ Summary:	libapreq perl module
 Summary(pl):	Modu³ perla libapreq
 Name:		perl-libwww
 Version:	0.33
-Release:	1
+Release:	2
 License:	Apache Group
 Group:		Development/Languages/Perl
 Source0:	http://www.apache.org/dist/httpd/libapreq-%{version}.tar.gz
 URL:		http://httpd.apache.org/apreq/
 BuildRequires:	perl >= 5.6
+BuildRequires:	apache-mod_perl
 BuildRequires:	rpm-perlprov >= 3.0.3-18
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
