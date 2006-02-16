@@ -5,14 +5,15 @@ Summary:	Generic Apache Request Library
 Summary(pl):	Standardowa biblioteka zapytañ Apache
 Summary(pt_BR):	Biblioteca de requisiçoes do Apache
 Name:		perl-libapreq
-Version:	1.3
+Version:	1.33
 Release:	1
 License:	Apache Software License 1.1
 Group:		Development/Languages/Perl
 Source0:	http://www.apache.org/dist/httpd/%{pdir}/%{pnam}-%{version}.tar.gz
-# Source0-md5:	b40854e91a6210a3af47ffffef9a875e
+# Source0-md5:	8ac4296342e637c6faa731dcf9087685
 URL:		http://httpd.apache.org/apreq/
-BuildRequires:	apache1-mod_perl >= 1.26-5
+BuildRequires:	apache1-mod_perl-devel >= 1.26-5
+BuildRequires:	perl-Apache-Test >= 1.13
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
 Requires:	apache1-mod_perl >= 1.26
@@ -36,7 +37,7 @@ cliente através da API do Apache em Perl.
 %setup -q -n %{pnam}-%{version}
 
 %build
-echo "/home/services/httpd" | perl Makefile.PL \
+perl Makefile.PL \
 	INSTALLDIRS=vendor
 %{__make} \
 	OPTIMIZE="%{rpmcflags}"
@@ -49,6 +50,11 @@ rm -rf $RPM_BUILD_ROOT
 
 install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 cp -af eg/perl/* $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
+rm -f
+
+rm -f $RPM_BUILD_ROOT%{perl_archlib}/perllocal.pod
+rm -f $RPM_BUILD_ROOT%{perl_vendorarch}/auto/libapreq/.packlist
+rm -f $RPM_BUILD_ROOT%{perl_vendorarch}/libapreq.pod
 
 %clean
 rm -rf $RPM_BUILD_ROOT
