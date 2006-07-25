@@ -8,7 +8,7 @@ Summary(pl):	Standardowa biblioteka zapytañ Apache
 Summary(pt_BR):	Biblioteca de requisiçoes do Apache
 Name:		perl-libapreq
 Version:	1.33
-Release:	3
+Release:	4
 License:	Apache Software License 1.1
 Group:		Development/Languages/Perl
 Source0:	http://www.apache.org/dist/httpd/%{pdir}/%{pnam}-%{version}.tar.gz
@@ -20,7 +20,7 @@ BuildRequires:	perl-Apache-Test >= 1.27-2.3
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	perl-mod_perl1 >= 1.25
 BuildRequires:	rpm-perlprov >= 4.1-13
-BuildConflicts:	apache-mod_perl
+BuildConflicts:	apache-mod_perl < 1:2.0.2-10
 Requires:	perl-mod_perl1 >= 1.26
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
