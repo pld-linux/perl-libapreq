@@ -1,3 +1,5 @@
+# TODO
+# - put headers and .a to -devel
 %include	/usr/lib/rpm/macros.perl
 %define		pnam	libapreq
 %define		pdir	libapreq
@@ -6,18 +8,20 @@ Summary(pl):	Standardowa biblioteka zapytañ Apache
 Summary(pt_BR):	Biblioteca de requisiçoes do Apache
 Name:		perl-libapreq
 Version:	1.33
-Release:	2
+Release:	3
 License:	Apache Software License 1.1
 Group:		Development/Languages/Perl
 Source0:	http://www.apache.org/dist/httpd/%{pdir}/%{pnam}-%{version}.tar.gz
 # Source0-md5:	8ac4296342e637c6faa731dcf9087685
+Patch0:		libapreq-modperl2.patch
 URL:		http://httpd.apache.org/apreq/
 BuildRequires:	apache1-mod_perl-devel >= 1.26-5
 BuildRequires:	perl-Apache-Test >= 1.27-2.3
 BuildRequires:	perl-devel >= 1:5.8.0
+BuildRequires:	perl-mod_perl1 >= 1.25
 BuildRequires:	rpm-perlprov >= 4.1-13
 BuildConflicts:	apache-mod_perl
-Requires:	apache1-mod_perl >= 1.26
+Requires:	perl-mod_perl1 >= 1.26
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 # remember about libapreq.spec when incrementing version
@@ -36,9 +40,10 @@ cliente através da API do Apache em Perl.
 
 %prep
 %setup -q -n %{pnam}-%{version}
+%patch0 -p1
 
 %build
-perl Makefile.PL \
+%{__perl} Makefile.PL \
 	INSTALLDIRS=vendor
 %{__make} \
 	OPTIMIZE="%{rpmcflags}"
