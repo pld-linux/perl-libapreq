@@ -1,0 +1,12 @@
+--- libapreq-1.33/Makefile.PL~	2004-12-06 17:31:08.000000000 +0200
++++ libapreq-1.33/Makefile.PL	2006-07-25 22:37:21.382421391 +0300
+@@ -30,9 +30,6 @@
+     if ($mod_perl::VERSION < 1.2402) {
+         die "Please upgrade mod_perl to 1.24_02 or greater";
+     }
+-    elsif ($mod_perl::VERSION > 1.98) {
+-        die "mod_perl 1.x ( < 1.99) is required";
+-    }
+ }
+ 
+ my $conf_data = join '', <DATA>;
