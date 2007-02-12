@@ -4,8 +4,8 @@
 %define		pnam	libapreq
 %define		pdir	libapreq
 Summary:	Generic Apache Request Library
-Summary(pl):	Standardowa biblioteka zapytaÒ Apache
-Summary(pt_BR):	Biblioteca de requisiÁoes do Apache
+Summary(pl.UTF-8):   Standardowa biblioteka zapyta≈Ñ Apache
+Summary(pt_BR.UTF-8):   Biblioteca de requisi√ßoes do Apache
 Name:		perl-libapreq
 Version:	1.33
 Release:	4
@@ -30,13 +30,13 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 This package contains modules for manipulating client request data via
 the Apache API with Perl.
 
-%description -l pl
-Ten pakiet zawiera modu≥y, s≥uø±ce do manipulowania danymi z zapytaÒ
-klientÛw HTTP danymi poprzez API Apache przy uøyciu Perla.
+%description -l pl.UTF-8
+Ten pakiet zawiera modu≈Çy, s≈Çu≈ºƒÖce do manipulowania danymi z zapyta≈Ñ
+klient√≥w HTTP danymi poprzez API Apache przy u≈ºyciu Perla.
 
-%description -l pt_BR
-Este pacote contÈm mÛdulos para a manipulaÁ„o de requisiÁıes de
-cliente atravÈs da API do Apache em Perl.
+%description -l pt_BR.UTF-8
+Este pacote cont√©m m√≥dulos para a manipula√ß√£o de requisi√ß√µes de
+cliente atrav√©s da API do Apache em Perl.
 
 %prep
 %setup -q -n %{pnam}-%{version}
