@@ -4,8 +4,8 @@
 %define		pnam	libapreq
 %define		pdir	libapreq
 Summary:	Generic Apache Request Library
-Summary(pl.UTF-8):   Standardowa biblioteka zapytań Apache
-Summary(pt_BR.UTF-8):   Biblioteca de requisiçoes do Apache
+Summary(pl.UTF-8):	Standardowa biblioteka zapytań Apache
+Summary(pt_BR.UTF-8):	Biblioteca de requisiçoes do Apache
 Name:		perl-libapreq
 Version:	1.33
 Release:	4
