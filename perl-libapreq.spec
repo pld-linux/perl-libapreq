@@ -2,7 +2,6 @@
 # - put headers and .a to -devel
 %include	/usr/lib/rpm/macros.perl
 %define		pnam	libapreq
-%define		pdir	libapreq
 Summary:	Generic Apache Request Library
 Summary(pl.UTF-8):	Standardowa biblioteka zapytań Apache
 Summary(pt_BR.UTF-8):	Biblioteca de requisiçoes do Apache
@@ -11,14 +10,13 @@ Version:	1.33
 Release:	4
 License:	Apache Software License 1.1
 Group:		Development/Languages/Perl
-Source0:	http://www.apache.org/dist/httpd/%{pdir}/%{pnam}-%{version}.tar.gz
+Source0:	http://www.apache.org/dist/httpd/libapreq/%{pnam}-%{version}.tar.gz
 # Source0-md5:	8ac4296342e637c6faa731dcf9087685
 Patch0:		libapreq-modperl2.patch
 URL:		http://httpd.apache.org/apreq/
-BuildRequires:	apache1-mod_perl-devel >= 1.26-5
 BuildRequires:	perl-Apache-Test >= 1.27-2.3
 BuildRequires:	perl-devel >= 1:5.8.0
-BuildRequires:	perl-mod_perl1 >= 1.25
+BuildRequires:	perl-mod_perl1-devel >= 1.26-5
 BuildRequires:	rpm-perlprov >= 4.1-13
 BuildConflicts:	apache-mod_perl < 1:2.0.2-10
 Requires:	perl-mod_perl1 >= 1.26
