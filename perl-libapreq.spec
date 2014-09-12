@@ -71,8 +71,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %dir %{perl_vendorarch}/auto/Apache/Cookie
 %dir %{perl_vendorarch}/auto/Apache/Request
-%{perl_vendorarch}/auto/Apache/Cookie/Cookie.bs
-%{perl_vendorarch}/auto/Apache/Request/Request.bs
 %attr(755,root,root) %{perl_vendorarch}/auto/Apache/Cookie/Cookie.so
 %attr(755,root,root) %{perl_vendorarch}/auto/Apache/Request/Request.so
 
