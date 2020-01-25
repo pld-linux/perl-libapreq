@@ -1,6 +1,5 @@
 # TODO
 # - put headers and .a to -devel
-%include	/usr/lib/rpm/macros.perl
 %define		pnam	libapreq
 Summary:	Generic Apache Request Library
 Summary(pl.UTF-8):	Standardowa biblioteka zapytań Apache
